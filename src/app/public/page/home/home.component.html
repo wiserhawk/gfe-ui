@@ -1,0 +1,20 @@
+<!---start-content---->
+<div class="content" onclick="closeNav()">
+	<div class="main-banner">
+		<h3>Get-Fit-Eat</h3>
+		<h4>Everything that keeps you on fitness track</h4>
+	</div>
+	<div class="wrap">
+	 	<div id="main" role="main">
+	      <ul id="tiles">
+	        <!-- These are our grid blocks -->
+	        <li *ngFor = "let fi of items ">
+				<app-item-tile [itemId] = "fi.itemId" [name] = "fi.name" [image] = "fi.image" [topic] = "fi.topic"></app-item-tile>
+	        </li>
+	        <!-- End of grid blocks -->
+	      </ul>
+		</div>
+		<div class="extra-div"><span class="btn-load-more" (click)="loadMore()">LOAD MORE</span></div>
+	</div>
+</div>
+<!---//End-content---->
