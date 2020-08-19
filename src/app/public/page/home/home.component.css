@@ -23,10 +23,12 @@ h3 {
 h4 {
 	margin: 20px auto 30px auto;
 	font-family: 'Encode Sans Semi Condensed', Verdana, sans-serif;
-	font-size:  1.5rem; 
-	font-weight: 200;
+	font-family: monospace;
+	font-size:  1.2rem; 
+	font-weight: bolder;
 	text-align: center;
-	color: #fff;
+	color: #074d63;
+	text-transform: uppercase;
 }
 h3, h4 {
 	-webkit-transition: opacity 0.5s linear, margin-top 0.5s linear; /* Safari */
