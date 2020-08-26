@@ -8,8 +8,8 @@
 	 	<div id="main" role="main">
 	      <ul id="tiles">
 	        <!-- These are our grid blocks -->
-	        <li *ngFor = "let fi of items ">
-				<app-item-tile [itemId] = "fi.itemId" [name] = "fi.name" [image] = "fi.image" [topic] = "fi.topic"></app-item-tile>
+	        <li *ngFor = "let recipe of recipes">
+				<app-item-tile [itemId] = "recipe.id" [name] = "recipe.mealName" [image] = "recipe.image" [topic] = "recipe.topic"></app-item-tile>
 	        </li>
 	        <!-- End of grid blocks -->
 	      </ul>

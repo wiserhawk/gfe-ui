@@ -15,7 +15,7 @@ import { HomeComponent } from './public/page/home/home.component';
 import { ItemTileComponent } from './public/controls/item-tile/item-tile.component';
 import { MealComponent } from './public/page/meal/meal.component';
 import { NutritionFactComponent } from './public/controls/nutrition-fact/nutrition-fact.component';
-import { HttpService } from './services/http.service';
+import { MealRecipesHttpService } from './services/meal-recipes-http.service';
 import { ErrorComponent } from './public/page/error/error.component';
 
 const routes: Routes = [
@@ -47,7 +47,7 @@ const routes: Routes = [
     AgGridModule.withComponents(null),
   ],
   providers: [
-    HttpService,
+    MealRecipesHttpService,
   ],
   bootstrap: [AppComponent],
   entryComponents: [

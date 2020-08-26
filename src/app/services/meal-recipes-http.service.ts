@@ -1,24 +1,67 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 
+
+export interface MealRecipe{
+  id: string
+	mealName: string
+  createDate: string
+	topic: string
+  category: string
+  description: string
+	mealTypes: string[]
+  image: string
+	recipe: string
+  ingredients: string[]
+  nutritionFacts: NutritionFacts
+  tags: string[] 
+	active: boolean
+}
+
+export interface NutritionFacts {
+  servingSize: number
+	servingPerContainer: number
+	calories: number
+	caloriesFromFat: number
+	totalFat: number
+	totalFatPercent: number
+	saturatedFat: number
+	saturatedFatPercent: number
+	transFat: number
+	transFatPercent: number
+	cholesterol: number
+	cholesterolPercent: number
+	sodium: number
+	sodiumPercent: number
+	totalCarbohydrates: number
+	totalCarbohydratesPercent: number
+	dietaryFiber: number
+	dietaryFiberPercent: number
+	sugars: number
+	protein: number
+	proteinPercent: number
+	vitaminAPercent: number
+	vitaminCPercent: number
+	calciumPercent: number
+	ironPercent: number
+}
+
 @Injectable()
-export class HttpService {
+export class MealRecipesHttpService {
 
   private apiRootUrl = environment.baseURL;
 
   
-  constructor(private _http: Http) { }
-
-  /** ######## FOOD SERVICE CALLS #########   */
+  constructor(private http: HttpClient) { }
 
   /**
-   * Get all food items.
+   * Get all meal recipes
    */
-  public getAllFoodItems(): Observable<Response> {
-    let url = this.apiRootUrl + "/gfe-main/foods/items/getAllItems";
-    return this._http.get(url);
+  public getAllMealRecipes(): Observable<MealRecipe[]> {
+    let url = this.apiRootUrl + "api/blogs/meal-recipes";
+    return this.http.get<MealRecipe[]>(url);
   }
 
   /**
@@ -26,7 +69,7 @@ export class HttpService {
    */
   public getAllActiveFoodItems(): Observable<Response> {
     let url = this.apiRootUrl + "/gfe-main/foods/items/getAllActiveItems";
-    return this._http.get(url);
+    return this.http.get(url);
   }
 
   /**
@@ -34,7 +77,7 @@ export class HttpService {
    */
   public getFoodItemById(id: string) : Observable<Response> {
     let url = this.apiRootUrl + "/gfe-main/foods/items/getItemById/" + id;
-    return this._http.get(url);
+    return this.http.get(url);
   }
 
   /** ######## USER SERVICE CALLS #########   */
@@ -45,23 +88,23 @@ export class HttpService {
   public createUserAccount(userDetail: any): Observable<Response> {
     let status: boolean = false;
     let url = this.apiRootUrl + "/gfe-main/user-manager/userAccount/create";
-    return this._http.post(url, userDetail);
+    return this.http.post(url, userDetail);
   }
 
   public authenticateUser(loginId: string, pwd: string): Observable<Response> {
     let loginDetail = {identifier: loginId,  password: pwd};
     let url = this.apiRootUrl + "/gfe-main/user-manager/authenticate";
-    return this._http.post(url, loginDetail);
+    return this.http.post(url, loginDetail);
   }
 
   public createAddressForUser(addressDetail: string): Observable<Response> {
     let url = this.apiRootUrl + "/gfe-main/user-manager/userAddress/create";
-    return this._http.post(url, addressDetail);
+    return this.http.post(url, addressDetail);
   }
 
   public getAddressesByUserId(userId: string): Observable<Response> {
     let url = this.apiRootUrl + "/gfe-main/user-manager/addressDetailsByUserId/get";
-    return this._http.post(url, userId);
+    return this.http.post(url, userId);
   }
 
   /** ######## BILLING SERVICE CALLS #########   */
@@ -73,7 +116,7 @@ export class HttpService {
     let status: boolean = false;
     let url = this.apiRootUrl + "/gfe-main/billing/calculateBill";
     //let url = "http://localhost:9002/billing/calculateBill";
-    return this._http.post(url, billDetail);
+    return this.http.post(url, billDetail);
   }
 
   /**
@@ -82,7 +125,7 @@ export class HttpService {
    */
   public isValidCoupon(coupon: string): Observable<Response>  {
     let url = this.apiRootUrl + "/gfe-main/billing/isValidCoupon/" + coupon;
-    return this._http.get(url);
+    return this.http.get(url);
   }
   
   
@@ -90,28 +133,28 @@ export class HttpService {
   
   public placeOrder(order: any): Observable<Response> {
     let url = this.apiRootUrl + "/gfe-main/order/createOrder/save";
-    return this._http.post(url, order);
+    return this.http.post(url, order);
   }
 
   public getOrderDetail(orderId: string) : Observable<Response> {
     let url = this.apiRootUrl + "/gfe-main/order/orderByOrderId/" + orderId;
-    return this._http.get(url);
+    return this.http.get(url);
   }
 
   /** ######## AVAILABILITY SERVICE CALLS #########   */
   
   public checkAvailabilityByPincode(pincode: string) : Observable<Response> {
     let url = this.apiRootUrl + "/gfe-main/availability/checkByPincode/" + pincode;
-    return this._http.get(url);
+    return this.http.get(url);
   }
 
   public savePaymentDetails(paymentPayload: any) : Observable<Response> {
     let url = this.apiRootUrl + "/gfe-main/payment/payumoney/payment-details";
-    return this._http.post(url, paymentPayload);
+    return this.http.post(url, paymentPayload);
   }
 
   public submitToPayUmoney(data: any) : Observable<Response> {
     let url = "https://test.payu.in/_payment";
-    return this._http.post(url, data);
+    return this.http.post(url, data);
   }
 }
