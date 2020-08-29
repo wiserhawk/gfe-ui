@@ -2,9 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgbModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
-import { AgGridModule } from 'ag-grid-angular/main';
+//import { AgGridModule } from 'ag-grid-angular/main';
 
 
 import { AppComponent } from './app.component';
@@ -41,10 +41,10 @@ const routes: Routes = [
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    HttpModule,
-    NgbModule.forRoot(),
+    HttpClientModule,
+    NgbModule,
     NgbModalModule,
-    AgGridModule.withComponents(null),
+    //AgGridModule.withComponents(null),
   ],
   providers: [
     MealRecipesHttpService,

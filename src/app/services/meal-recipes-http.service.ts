@@ -5,23 +5,23 @@ import { environment } from '../../environments/environment';
 
 
 export interface MealRecipe{
-  id: string
+	id: string
 	mealName: string
-  createDate: string
+  	createDate: string
 	topic: string
-  category: string
-  description: string
+  	category: string
+  	description: string
 	mealTypes: string[]
-  image: string
+  	image: string
 	recipe: string
-  ingredients: string[]
-  nutritionFacts: NutritionFacts
-  tags: string[] 
+  	ingredients: string[]
+  	nutritionFacts: NutritionFacts
+  	tags: string[] 
 	active: boolean
 }
 
 export interface NutritionFacts {
-  servingSize: number
+  	servingSize: number
 	servingPerContainer: number
 	calories: number
 	caloriesFromFat: number
