@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-item-tile',
@@ -7,18 +8,17 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ItemTileComponent implements OnInit {
   
-  @Input() itemId;
-  @Input() name;
-  @Input() image;
+  @Input() mealId
+  @Input() name
+  @Input() image
   @Input() topic
   
-  private cartItems = [];
-
-  itemImageRootPath: string;
+  imgBasePath = environment.imgBaseURL + 'meals/'
 
   constructor() { }
 
   ngOnInit() { }
+
 }
   
 

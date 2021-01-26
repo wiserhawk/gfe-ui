@@ -9,7 +9,7 @@
 	      <ul id="tiles">
 	        <!-- These are our grid blocks -->
 	        <li *ngFor = "let recipe of recipes">
-				<app-item-tile [itemId] = "recipe.id" [name] = "recipe.mealName" [image] = "recipe.image" [topic] = "recipe.topic"></app-item-tile>
+				<app-item-tile [mealId] = "recipe.id" [name] = "recipe.mealName" [image] = "recipe.image" [topic] = "recipe.topic"></app-item-tile>
 	        </li>
 	        <!-- End of grid blocks -->
 	      </ul>

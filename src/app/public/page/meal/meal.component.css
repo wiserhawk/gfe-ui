@@ -52,7 +52,7 @@
 .meal-basic-info label {
 	height:auto;
 	color: #555;
-	font-size: 1.3em;
+	font-size: 1.2em;
 	font-weight: bold;
 	margin-bottom: 20px;
 	text-decoration:none;
@@ -65,6 +65,11 @@
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 75ch;*/
+}
+
+.topic {
+	color: #e60649;
+	text-decoration: none;
 }
 
 .meal-basic-info span a{
@@ -91,7 +96,6 @@
 } */
 .meal-basic-info p{
 	font-size: 0.875em;
-	color: #B7B5B5;
 	margin: 0.6em 0;
 	line-height: 1.5em;
 }

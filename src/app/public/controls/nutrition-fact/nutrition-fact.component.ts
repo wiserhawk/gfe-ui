@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { NutritionFacts } from 'src/app/services/meal-recipes-http.service';
 
 @Component({
   selector: 'app-nutrition-fact',
@@ -8,11 +9,9 @@ import { Component, OnInit, Input } from '@angular/core';
 export class NutritionFactComponent implements OnInit {
 
   @Input() nutritionFacts;
-  //nutritionFacts: any = 
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

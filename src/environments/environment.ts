@@ -5,5 +5,6 @@
 
 export const environment = {
   production: false,
-  baseURL: 'http://localhost:8001/'
+  baseURL: 'http://localhost:8001/',
+  imgBaseURL: 'http://localhost:4200/assets/images/'
 };

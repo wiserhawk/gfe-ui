@@ -17,11 +17,13 @@ import { MealComponent } from './public/page/meal/meal.component';
 import { NutritionFactComponent } from './public/controls/nutrition-fact/nutrition-fact.component';
 import { MealRecipesHttpService } from './services/meal-recipes-http.service';
 import { ErrorComponent } from './public/page/error/error.component';
+import { BlogComponent } from './public/page/blog/blog.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'meal/:id', component: MealComponent },
+  { path: 'blog/:blog_url', component: BlogComponent },
   { path: 'error', component: ErrorComponent },
 ];
 
@@ -36,6 +38,7 @@ const routes: Routes = [
     MealComponent,
     NutritionFactComponent,
     ErrorComponent,
+    BlogComponent,
   ],
   imports: [
     BrowserModule,
