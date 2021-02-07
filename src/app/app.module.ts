@@ -16,6 +16,7 @@ import { ItemTileComponent } from './public/controls/item-tile/item-tile.compone
 import { MealComponent } from './public/page/meal/meal.component';
 import { NutritionFactComponent } from './public/controls/nutrition-fact/nutrition-fact.component';
 import { MealRecipesHttpService } from './services/meal-recipes-http.service';
+import { BlogsHttpService } from './services/blogs-http.service';
 import { ErrorComponent } from './public/page/error/error.component';
 import { BlogComponent } from './public/page/blog/blog.component';
 
@@ -51,6 +52,7 @@ const routes: Routes = [
   ],
   providers: [
     MealRecipesHttpService,
+    BlogsHttpService,
   ],
   bootstrap: [AppComponent],
   entryComponents: [

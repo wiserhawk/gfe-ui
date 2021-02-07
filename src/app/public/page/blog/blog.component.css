@@ -10,13 +10,21 @@
     color: #444;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     line-height: 200%;
+    word-spacing: 2px;
 }
 
 .blog-side-panel {
-    padding: 20px;
+    padding: 30px;
     float: left;
     width: 30%;
-    background-color: cornsilk;
+    line-height: 200%;
+    font-size: 1.1em;
+    word-spacing: 2px;
+    margin: 0 auto;
+}
+
+.blog-side-panel a img {
+    width: 100%;
 }
 
 .blog-title {
@@ -37,7 +45,7 @@
     width: 100%;
 }
 
-.blog-auther {
+.blog-author {
     float: left;
     width: 100%;
     font-weight: bold;
